@@ -1,13 +1,8 @@
 <sub><em>Neo-tree's</em></sub>
 <h1>File Nesting Config<sup><em> for Neovim</em></sup></h1>
-![logo](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/441b92f1-c053-4db6-8ef1-c69cde659d04)
+![](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/e5339f44-7c8c-44a2-9d54-af3ddaceace2)
 
 A neovim implementation of the [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) with [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim).
-
-## Screenshots
-![](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/6f3fc6a8-9a9b-473d-9476-2500ce0b30a3)
-![](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/004d2371-03ff-4129-a1a4-1206cce6686a)
-
 
 ## Use it
 
