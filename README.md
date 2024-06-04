@@ -47,6 +47,7 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
 If you prefer not using plugin, you can copy rules and add your `neo-tree` config directly. But if you use plugin, you will get updates free.
 
 ```lua
+-- updated 2024-06-04 14:01
 {
   ['*.asax'] = {
     files = { '%1%.*%.cs', '%1%.*%.vb' },
@@ -379,6 +380,6 @@ Instead, go to `build/convert.lua`, make changes and then submit a PR. Thanks!
 
 ## Credit & References
 
-- [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) - Who collect all the rules
+- [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) - Who created all rules for vscode
 -- vim: set nomodifiable :
 

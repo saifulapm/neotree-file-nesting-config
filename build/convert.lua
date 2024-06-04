@@ -530,12 +530,13 @@ return M
 ]]
 
 local readme_template = [[
-<h1>File Nesting Config<sup><em> for Neo-tree.nvim</em></sup></h1>
+<sub><em>Neo-tree's</em></sub>
+<h1>File Nesting Config<sup><em> for Neovim</em></sup></h1>
+
+![neotree-file-nesting-config](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/88a6e479-e23d-40d2-a44b-b755c43ea666)
 
 
 A neovim implementation of the [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) with [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim).
-
-## Screenshots
 
 
 ## Use it
@@ -545,11 +546,11 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
 ```lua
 -- lazy.nvim
 {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
     dependencies = {
       -- Others dependencies
-      "saifulapm/neotree-file-nesting-config", -- add plugin as dependency. no need any other config or setup call
+      'saifulapm/neotree-file-nesting-config', -- add plugin as dependency. no need any other config or setup call
     },
     opts = {
       -- recommanded config for better UI
@@ -578,6 +579,7 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
 If you prefer not using plugin, you can copy rules and add your `neo-tree` config directly. But if you use plugin, you will get updates free.
 
 ```lua
+-- updated %s
 %s
 ```
 
@@ -588,12 +590,12 @@ Instead, go to `build/convert.lua`, make changes and then submit a PR. Thanks!
 
 ## Credit & References
 
-- [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) - Who collect all the rules
+- [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) - Who created all rules for vscode
 -- vim: set nomodifiable :
 ]]
 
 local full_str = stringify(full)
 local init_output = init_template:format(full_str):gsub('"', "'")
-local readme_output = readme_template:format(full_str):gsub('"', "'")
+local readme_output = readme_template:format(os.date("%Y-%m-%d %H:%M"), full_str):gsub('"', "'")
 vim.fn.writefile(vim.split(init_output, "\n"), "./lua/neotree-file-nesting-config.lua")
 vim.fn.writefile(vim.split(readme_output, "\n"), "./README.md")
