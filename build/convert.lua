@@ -563,6 +563,13 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
           },
         },
       },
+      default_component_configs = {
+        indent = {
+          with_expanders = true,
+          expander_collapsed = '',
+          expander_expanded = '',
+        },
+      },
       -- others config
     },
     config = function(_, opts)
