@@ -597,7 +597,6 @@ Instead, go to `build/convert.lua`, make changes and then submit a PR. Thanks!
 ## Credit & References
 
 - [vscode-file-nesting-config](https://github.com/antfu/vscode-file-nesting-config) - Who created all rules for vscode
--- vim: set nomodifiable :
 ]]
 
 local full_str = stringify(full)
