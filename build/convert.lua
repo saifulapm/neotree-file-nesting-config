@@ -530,8 +530,7 @@ return M
 ]]
 
 local readme_template = [[
-<sub><em>Neo-tree's</em></sub>
-<h1>File Nesting Config<sup><em> for Neovim</em></sup></h1>
+<h1>Neo-tree File Nesting Config<sup><em> for Neovim</em></sup></h1>
 
 ![neotree-file-nesting-config](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/88a6e479-e23d-40d2-a44b-b755c43ea666)
 
