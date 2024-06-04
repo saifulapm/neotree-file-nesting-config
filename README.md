@@ -1,5 +1,4 @@
-<sub><em>Neo-tree's</em></sub>
-<h1>File Nesting Config<sup><em> for Neovim</em></sup></h1>
+<h1>Neo-tree File Nesting Config<sup><em> for Neovim</em></sup></h1>
 
 ![neotree-file-nesting-config](https://github.com/saifulapm/neotree-file-nesting-config/assets/3833316/88a6e479-e23d-40d2-a44b-b755c43ea666)
 
@@ -47,7 +46,7 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
 If you prefer not using plugin, you can copy rules and add your `neo-tree` config directly. But if you use plugin, you will get updates free.
 
 ```lua
--- updated 2024-06-04 14:01
+-- updated 2024-06-04 14:04
 {
   ['*.asax'] = {
     files = { '%1%.*%.cs', '%1%.*%.vb' },
