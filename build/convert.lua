@@ -256,6 +256,7 @@ local readme = {
   "RELEASE_NOTES*",
   "SECURITY.MD",
   "SPONSORS*",
+  "README-*",
 }
 
 local cargo =
@@ -490,7 +491,7 @@ full = mergeTables(full, convertStringTable("Dockerfile", docker))
 full = mergeTables(full, convertStringTable("package.json", packageJSON))
 full = mergeTables(full, convertStringTable("rush.json", packageJSON))
 full = mergeTables(full, convertStringTable("pubspec.yaml", pubspecYAML))
-full = mergeTables(full, convertStringTable("README*", readme, true))
+full = mergeTables(full, convertStringTable("README.*", readme, true))
 full = mergeTables(full, convertStringTable("Cargo.toml", cargo))
 full = mergeTables(full, convertStringTable("gemfile", gemfile))
 full = mergeTables(full, convertStringTable("go.mod", gofile))

@@ -53,7 +53,7 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
 If you prefer not using plugin, you can copy rules and add your `neo-tree` config directly. But if you use plugin, you will get updates free.
 
 ```lua
--- updated 2024-06-09 11:11
+-- updated 2024-06-09 19:06
 {
   ['*.asax'] = {
     files = { '%1%.*%.cs', '%1%.*%.vb' },
@@ -263,10 +263,10 @@ If you prefer not using plugin, you can copy rules and add your `neo-tree` confi
     files = { 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version' },
     pattern = 'Pipfile$'
   },
-  ['README*'] = {
-    files = { 'AUTHORS', 'BACKERS*', 'CHANGELOG*', 'CITATION*', 'CODE_OF_CONDUCT*', 'CODEOWNERS', 'CONTRIBUTING*', 'CONTRIBUTORS', 'COPYING*', 'CREDITS', 'GOVERNANCE%.MD', 'HISTORY%.MD', 'LICENSE*', 'MAINTAINERS', 'RELEASE_NOTES*', 'SECURITY%.MD', 'SPONSORS*' },
+  ['README.*'] = {
+    files = { 'AUTHORS', 'BACKERS*', 'CHANGELOG*', 'CITATION*', 'CODE_OF_CONDUCT*', 'CODEOWNERS', 'CONTRIBUTING*', 'CONTRIBUTORS', 'COPYING*', 'CREDITS', 'GOVERNANCE%.MD', 'HISTORY%.MD', 'LICENSE*', 'MAINTAINERS', 'RELEASE_NOTES*', 'SECURITY%.MD', 'SPONSORS*', 'README-*' },
     ignore_case = true,
-    pattern = 'README(.*)$'
+    pattern = 'README%.(.*)$'
   },
   ['app.config.*'] = {
     files = { '%.babelrc*', '%.cssnanorc*', '%.htmlnanorc*', '%.postcssrc*', '%.terserrc*', 'babel%.config%.*', 'capacitor%.config%.*', 'contentlayer%.config%.*', 'cssnano%.config%.*', 'formkit%.config%.*', 'formulate%.config%.*', 'htmlnanorc%.*', 'i18n%.config%.*', 'ionic%.config%.*', 'panda%.config%.*', 'postcss%.config%.*', 'rspack%.config%.*', 'sst%.config%.*', 'svgo%.config%.*', 'tailwind%.config%.*', 'uno%.config%.*', 'unocss%.config%.*', 'vuetify%.config%.*', 'webpack%.config%.*', 'windi%.config%.*', '%.env%.*', '%.envrc', '*%.env', 'env%.d%.ts', '%.codecov', '%.lighthouserc%.*', '%.mocha*', 'ava%.config%.*', 'cypress%.*', 'histoire%.config%.*', 'jasmine%.*', 'jest%.config%.*', 'karma*', 'lighthouserc%.*', 'playwright%.config%.*', 'puppeteer%.config%.*', 'vitest%.config%.*', 'api-extractor%.json', 'jsconfig%.*', 'tsconfig%.*', 'tsdoc%.*' },
