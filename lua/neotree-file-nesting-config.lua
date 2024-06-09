@@ -124,6 +124,10 @@ M.nesting_rules = {
     files = { '%1%.pubxml%.user' },
     pattern = '(.*)%.pubxml$'
   },
+  ['*.py'] = {
+    files = { '%1%.pyi' },
+    pattern = '(.*)%.py$'
+  },
   ['*.razor'] = {
     files = { '%1%.razor%.css', '%1%.razor%.scss', '%1%.razor%.cs' },
     pattern = '(.*)%.razor$'

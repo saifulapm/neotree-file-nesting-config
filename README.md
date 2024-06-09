@@ -53,7 +53,7 @@ A neovim implementation of the [vscode-file-nesting-config](https://github.com/a
 If you prefer not using plugin, you can copy rules and add your `neo-tree` config directly. But if you use plugin, you will get updates free.
 
 ```lua
--- updated 2024-06-04 15:11
+-- updated 2024-06-09 11:11
 {
   ['*.asax'] = {
     files = { '%1%.*%.cs', '%1%.*%.vb' },
@@ -174,6 +174,10 @@ If you prefer not using plugin, you can copy rules and add your `neo-tree` confi
   ['*.pubxml'] = {
     files = { '%1%.pubxml%.user' },
     pattern = '(.*)%.pubxml$'
+  },
+  ['*.py'] = {
+    files = { '%1%.pyi' },
+    pattern = '(.*)%.py$'
   },
   ['*.razor'] = {
     files = { '%1%.razor%.css', '%1%.razor%.scss', '%1%.razor%.cs' },

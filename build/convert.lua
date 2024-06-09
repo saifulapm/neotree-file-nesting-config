@@ -377,6 +377,7 @@ local base = {
   ["*.module.ts"] = "%1.resolver.ts, %1.controller.ts, %1.service.ts",
   ["*.mts"] = "%1.mts.map, %1.*.mts, %1_*.mts",
   ["*.pubxml"] = "%1.pubxml.user",
+  ["*.py"] = "%1.pyi",
   ["*.resx"] = "%1.*.resx, %1.designer.cs, %1.designer.vb",
   ["*.ts"] = "%1.js, %1.d.ts.map, %1.*.ts, %1_*.js, %1_*.ts",
   ["*.tsx"] = "%1.ts, %1.*.tsx, %1_*.ts, %1_*.tsx, %1.less, %1.module.less, %1.scss, %1.module.scss",
