@@ -213,7 +213,7 @@ M.nesting_rules = {
     pattern = 'Makefile$'
   },
   Pipfile = {
-    files = { 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version' },
+    files = { 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version' },
     pattern = 'Pipfile$'
   },
   ['README.*'] = {
@@ -266,7 +266,7 @@ M.nesting_rules = {
     pattern = 'go%.work$'
   },
   ['hatch.toml'] = {
-    files = { 'hatch%.toml', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version' },
+    files = { 'hatch%.toml', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version' },
     pattern = 'hatch%.toml$'
   },
   ['mix.exs'] = {
@@ -290,7 +290,7 @@ M.nesting_rules = {
     pattern = 'pubspec%.yaml$'
   },
   ['pyproject.toml'] = {
-    files = { 'pyproject%.toml', 'pdm%.lock', '%.pdm%.toml', '%.pdm-python', 'poetry%.lock', 'poetry%.toml', 'setup%.py', 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version', 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version', 'hatch%.toml', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*' },
+    files = { 'pyproject%.toml', 'pdm%.lock', '%.pdm%.toml', '%.pdm-python', 'poetry%.lock', 'poetry%.toml', 'setup%.py', 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', 'hatch%.toml', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*' },
     pattern = 'pyproject%.toml$'
   },
   ['quasar.conf.js'] = {
@@ -302,7 +302,7 @@ M.nesting_rules = {
     pattern = 'remix%.config%.(.*)$'
   },
   ['requirements.txt'] = {
-    files = { 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version' },
+    files = { 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version' },
     pattern = 'requirements%.txt$'
   },
   ['rush.json'] = {
@@ -310,11 +310,11 @@ M.nesting_rules = {
     pattern = 'rush%.json$'
   },
   ['setup.cfg'] = {
-    files = { 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version' },
+    files = { 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version' },
     pattern = 'setup%.cfg$'
   },
   ['setup.py'] = {
-    files = { 'setup%.py', 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.editorconfig', '%.flake8', '%.isort%.cfg', '%.python-version' },
+    files = { 'setup%.py', 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version' },
     pattern = 'setup%.py$'
   },
   ['shims.d.ts'] = {

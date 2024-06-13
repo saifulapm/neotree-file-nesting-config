@@ -284,7 +284,7 @@ local pubspecYAML = {
 
 local elixir = { "mix.lock", ".formatter.exs", ".credo.exs", ".dialyzer_ignore.exs", ".iex.exs", ".tool-versions" }
 
-local pythonConfigs = { "tox.ini", ".editorconfig", ".flake8", ".isort.cfg", ".python-version" }
+local pythonConfigs = { "tox.ini", ".flake8", ".isort.cfg", ".python-version" }
 
 local requirementstxt = { "requirements*.txt", "requirements*.in", "requirements*.pip" }
 
