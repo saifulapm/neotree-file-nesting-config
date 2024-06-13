@@ -71,7 +71,7 @@ local linters = {
   ".textlint*",
   ".xo-config*",
   ".yamllint*",
-  "biome.json",
+  "biome.json*",
   "commitlint*",
   "dangerfile*",
   "dlint.json",
