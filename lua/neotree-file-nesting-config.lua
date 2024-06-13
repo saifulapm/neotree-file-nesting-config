@@ -156,6 +156,10 @@ M.nesting_rules = {
     files = { '%1%.*%.ts', '%1%.*%.js', '%1%.story%.vue' },
     pattern = '(.*)%.vue$'
   },
+  ['*.w'] = {
+    files = { '%1%.*%.w', 'I%1%.w' },
+    pattern = '(.*)%.w$'
+  },
   ['*.xaml'] = {
     files = { '%1%.xaml%.cs' },
     pattern = '(.*)%.xaml$'

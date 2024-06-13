@@ -385,6 +385,7 @@ local base = {
   ["*.ts"] = "%1.js, %1.d.ts.map, %1.*.ts, %1_*.js, %1_*.ts",
   ["*.tsx"] = "%1.ts, %1.*.tsx, %1_*.ts, %1_*.tsx, %1.less, %1.module.less, %1.scss, %1.module.scss",
   ["*.vue"] = "%1.*.ts, %1.*.js, %1.story.vue",
+  ["*.w"] = "%1.*.w, I%1.w",
   ["*.xaml"] = "%1.xaml.cs",
   ["BUILD.bazel"] = "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
   ["CMakeLists.txt"] = "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt",
