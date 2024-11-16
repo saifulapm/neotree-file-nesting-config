@@ -44,6 +44,7 @@ local services = {
   "crowdin*",
   "jenkins*",
   "netlify*",
+  "nixpacks*",
   "Procfile",
   "pullapprove*",
   "release-tasks.sh",
@@ -103,8 +104,10 @@ local workspaces = {
   ".tazerc*",
   ".tool-versions",
   ".yarnrc*",
+  "*.code-workspace",
   "bower.json",
   "bun.lockb",
+  "bunfig.toml",
   "firebase.json",
   "lerna*",
   "npm-shrinkwrap.json",
@@ -255,7 +258,10 @@ local readme = {
   "HISTORY.MD",
   "LICENSE*",
   "MAINTAINERS",
+  "README_*",
+  "README-*",
   "RELEASE_NOTES*",
+  "ROADMAP.MD",
   "SECURITY.MD",
   "SPONSORS*",
   "README-*",
@@ -321,6 +327,8 @@ local pyprojecttoml = {
   ".pdm-python",
   "poetry.lock",
   "poetry.toml",
+  "uv.lock",
+  "uv.toml",
 }
 for i = 1, #setuppy do
   table.insert(pyprojecttoml, setuppy[i])
@@ -348,6 +356,7 @@ end
 local sqlite = { "*.db-shm", "*.db-wal" }
 
 local razor = { "%1.razor.css", "%1.razor.scss", "%1.razor.cs" }
+local sanity = { "sanity.cli.*", "sanity.types.ts", "schema.json" }
 
 local base = {
   [".clang-tidy"] = ".clang-format, .clangd, compile_commands.json",
@@ -372,8 +381,8 @@ local base = {
   ["*.fs"] = "%1.fs.js, %1.fs.js.map, %1.fs.jsx, %1.fs.ts, %1.fs.tsx, %1.fs.rs, %1.fs.php, %1.fs.dart",
   ["*.go"] = "%1_test.go",
   ["*.java"] = "%1.class",
-  ["*.js"] = "%1.js.map, %1.*.js, %1_*.js",
-  ["*.jsx"] = "%1.js, %1.*.jsx, %1_*.js, %1_*.jsx, %1.less, %1.module.less",
+  ["*.js"] = "%1.js.map, %1.*.js, %1_*.js, %1_*.d.ts",
+  ["*.jsx"] = "%1.js, %1.*.jsx, %1_*.js, %1_*.jsx, %1.less, %1.module.less, %1.module.less.d.ts, %1.scss, %1.module.scss, %1.module.scss.d.ts",
   ["*.master"] = "%1.*.cs, %1.*.vb",
   ["*.md"] = "%1.*",
   ["*.mjs"] = "%1.mjs.map, %1.*.mjs, %1_*.mjs",
@@ -383,10 +392,12 @@ local base = {
   ["*.py"] = "%1.pyi",
   ["*.resx"] = "%1.*.resx, %1.designer.cs, %1.designer.vb",
   ["*.ts"] = "%1.js, %1.d.ts.map, %1.*.ts, %1_*.js, %1_*.ts",
-  ["*.tsx"] = "%1.ts, %1.*.tsx, %1_*.ts, %1_*.tsx, %1.less, %1.module.less, %1.scss, %1.module.scss",
+  ["*.tsx"] = "%1.ts, %1.*.tsx, %1_*.ts, %1_*.tsx, %1.less, %1.module.less, %1.module.less.d.ts, %1.scss, %1.module.scss, %1.module.scss.d.ts, %1.css.ts",
   ["*.vue"] = "%1.*.ts, %1.*.js, %1.story.vue",
   ["*.w"] = "%1.*.w, I%1.w",
   ["*.xaml"] = "%1.xaml.cs",
+  ["ansible.cfg"] = "ansible.cfg, .ansible-lint, requirements.yml",
+  ["build-wrapper.log"] = "build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*",
   ["BUILD.bazel"] = "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
   ["CMakeLists.txt"] = "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt",
   ["default.nix"] = "shell.nix",
@@ -513,6 +524,7 @@ full = mergeTables(full, convertStringTable("*.tex", tex))
 full = mergeTables(full, convertStringTable("deno.json*", denoRuntime))
 full = mergeTables(full, convertStringTable("*.db", sqlite))
 full = mergeTables(full, convertStringTable("*.razor", razor))
+full = mergeTables(full, convertStringTable("sanity.config.*", sanity))
 
 for n, i in pairs(frameworks) do
   local merged = mergeTables(i, libraries)

@@ -93,11 +93,11 @@ M.nesting_rules = {
     pattern = '(.*)%.java$'
   },
   ['*.js'] = {
-    files = { '%1%.js%.map', '%1%.*%.js', '%1_*%.js' },
+    files = { '%1%.js%.map', '%1%.*%.js', '%1_*%.js', '%1_*%.d%.ts' },
     pattern = '(.*)%.js$'
   },
   ['*.jsx'] = {
-    files = { '%1%.js', '%1%.*%.jsx', '%1_*%.js', '%1_*%.jsx', '%1%.less', '%1%.module%.less' },
+    files = { '%1%.js', '%1%.*%.jsx', '%1_*%.js', '%1_*%.jsx', '%1%.less', '%1%.module%.less', '%1%.module%.less%.d%.ts', '%1%.scss', '%1%.module%.scss', '%1%.module%.scss%.d%.ts' },
     pattern = '(.*)%.jsx$'
   },
   ['*.master'] = {
@@ -145,7 +145,7 @@ M.nesting_rules = {
     pattern = '(.*)%.ts$'
   },
   ['*.tsx'] = {
-    files = { '%1%.ts', '%1%.*%.tsx', '%1_*%.ts', '%1_*%.tsx', '%1%.less', '%1%.module%.less', '%1%.scss', '%1%.module%.scss' },
+    files = { '%1%.ts', '%1%.*%.tsx', '%1_*%.ts', '%1_*%.tsx', '%1%.less', '%1%.module%.less', '%1%.module%.less%.d%.ts', '%1%.scss', '%1%.module%.scss', '%1%.module%.scss%.d%.ts', '%1%.css%.ts' },
     pattern = '(.*)%.tsx$'
   },
   ['*.vbproj'] = {
@@ -217,9 +217,13 @@ M.nesting_rules = {
     pattern = 'Pipfile$'
   },
   ['README.*'] = {
-    files = { 'AUTHORS', 'BACKERS*', 'CHANGELOG*', 'CITATION*', 'CODE_OF_CONDUCT*', 'CODEOWNERS', 'CONTRIBUTING*', 'CONTRIBUTORS', 'COPYING*', 'CREDITS', 'GOVERNANCE%.MD', 'HISTORY%.MD', 'LICENSE*', 'MAINTAINERS', 'RELEASE_NOTES*', 'SECURITY%.MD', 'SPONSORS*', 'README-*' },
+    files = { 'AUTHORS', 'BACKERS*', 'CHANGELOG*', 'CITATION*', 'CODE_OF_CONDUCT*', 'CODEOWNERS', 'CONTRIBUTING*', 'CONTRIBUTORS', 'COPYING*', 'CREDITS', 'GOVERNANCE%.MD', 'HISTORY%.MD', 'LICENSE*', 'MAINTAINERS', 'README_*', 'README-*', 'RELEASE_NOTES*', 'ROADMAP%.MD', 'SECURITY%.MD', 'SPONSORS*', 'README-*' },
     ignore_case = true,
     pattern = 'README%.(.*)$'
+  },
+  ['ansible.cfg'] = {
+    files = { 'ansible%.cfg', '%.ansible-lint', 'requirements%.yml' },
+    pattern = 'ansible%.cfg$'
   },
   ['app.config.*'] = {
     files = { '%.babelrc*', '%.cssnanorc*', '%.htmlnanorc*', '%.postcssrc*', '%.terserrc*', 'babel%.config%.*', 'capacitor%.config%.*', 'contentlayer%.config%.*', 'cssnano%.config%.*', 'drizzle%.config%.*', 'formkit%.config%.*', 'formulate%.config%.*', 'htmlnanorc%.*', 'i18n%.config%.*', 'ionic%.config%.*', 'panda%.config%.*', 'postcss%.config%.*', 'rspack%.config%.*', 'sst%.config%.*', 'svgo%.config%.*', 'tailwind%.config%.*', 'uno%.config%.*', 'unocss%.config%.*', 'vuetify%.config%.*', 'webpack%.config%.*', 'windi%.config%.*', '%.env%.*', '%.envrc', '*%.env', 'env%.d%.ts', '%.codecov', '%.lighthouserc%.*', '%.mocha*', 'ava%.config%.*', 'cypress%.*', 'histoire%.config%.*', 'jasmine%.*', 'jest%.config%.*', 'karma*', 'lighthouserc%.*', 'playwright%.config%.*', 'puppeteer%.config%.*', 'vitest%.config%.*', 'api-extractor%.json', 'jsconfig%.*', 'tsconfig%.*', 'tsdoc%.*' },
@@ -232,6 +236,10 @@ M.nesting_rules = {
   ['astro.config.*'] = {
     files = { '%.babelrc*', '%.cssnanorc*', '%.htmlnanorc*', '%.postcssrc*', '%.terserrc*', 'babel%.config%.*', 'capacitor%.config%.*', 'contentlayer%.config%.*', 'cssnano%.config%.*', 'drizzle%.config%.*', 'formkit%.config%.*', 'formulate%.config%.*', 'htmlnanorc%.*', 'i18n%.config%.*', 'ionic%.config%.*', 'panda%.config%.*', 'postcss%.config%.*', 'rspack%.config%.*', 'sst%.config%.*', 'svgo%.config%.*', 'tailwind%.config%.*', 'uno%.config%.*', 'unocss%.config%.*', 'vuetify%.config%.*', 'webpack%.config%.*', 'windi%.config%.*', '%.env%.*', '%.envrc', '*%.env', 'env%.d%.ts', '%.codecov', '%.lighthouserc%.*', '%.mocha*', 'ava%.config%.*', 'cypress%.*', 'histoire%.config%.*', 'jasmine%.*', 'jest%.config%.*', 'karma*', 'lighthouserc%.*', 'playwright%.config%.*', 'puppeteer%.config%.*', 'vitest%.config%.*', 'api-extractor%.json', 'jsconfig%.*', 'tsconfig%.*', 'tsdoc%.*' },
     pattern = 'astro%.config%.(.*)$'
+  },
+  ['build-wrapper.log'] = {
+    files = { 'build-wrapper*%.log', 'build-wrapper-dump*%.json', 'build-wrapper-win*%.exe', 'build-wrapper-linux*', 'build-wrapper-macosx*' },
+    pattern = 'build-wrapper%.log$'
   },
   ['composer.json'] = {
     files = { 'composer%.lock', 'phpunit%.xml*', 'psalm*%.xml', '%.php*%.cache' },
@@ -282,7 +290,7 @@ M.nesting_rules = {
     pattern = 'nuxt%.config%.(.*)$'
   },
   ['package.json'] = {
-    files = { '%.browserslist*', '%.cz-config%.js', '%.czrc', 'components%.*', '%.nodemon*', '%.pm2*', '%.versionrc*', '%.vscode*', '%.watchman*', 'apollo%.config%.*', 'nest-cli%.*', 'nodemon*', 'pm2%.*', 'typedoc*', 'vetur%.config%.*', '%.gitmojirc%.json', '%.huskyrc*', '%.node-version', '%.npm*', '%.nvmrc', '%.pnp%.*', '%.pnpm*', '%.release-please*%.json', '%.releaserc*', '%.simple-git-hooks*', '%.tazerc*', '%.tool-versions', '%.yarnrc*', 'bower%.json', 'bun%.lockb', 'firebase%.json', 'lerna*', 'npm-shrinkwrap%.json', 'nx%.*', 'package-lock%.json', 'package%.nls*%.json', 'pnpm*', 'release-please*%.json', 'release%.config%.*', 'simple-git-hooks*', 'turbo*', 'workspace%.json', 'yarn*', 'build%.config%.*', 'electron-builder%.*', 'grunt*', 'gulp*', 'rollup%.config%.*', 'tsup%.config%.*', 'webpack*', 'rspack*', '%.circleci*', '%.firebase*', '%.github*', '%.gitlab*', '%.gitpod*', '%.sentry*', '%.stackblitz*', '%.styleci*', '%.travis*', 'appveyor*', 'azure-pipelines*', 'crowdin*', 'jenkins*', 'netlify*', 'Procfile', 'pullapprove*', 'release-tasks%.sh', 'renovate*', 'sonar-project%.properties', 'unlighthouse*', 'vercel*', 'wrangler%.toml', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*', 'knip%.*', '%.knip%.*' },
+    files = { '%.browserslist*', '%.cz-config%.js', '%.czrc', 'components%.*', '%.nodemon*', '%.pm2*', '%.versionrc*', '%.vscode*', '%.watchman*', 'apollo%.config%.*', 'nest-cli%.*', 'nodemon*', 'pm2%.*', 'typedoc*', 'vetur%.config%.*', '%.gitmojirc%.json', '%.huskyrc*', '%.node-version', '%.npm*', '%.nvmrc', '%.pnp%.*', '%.pnpm*', '%.release-please*%.json', '%.releaserc*', '%.simple-git-hooks*', '%.tazerc*', '%.tool-versions', '%.yarnrc*', '*%.code-workspace', 'bower%.json', 'bun%.lockb', 'bunfig%.toml', 'firebase%.json', 'lerna*', 'npm-shrinkwrap%.json', 'nx%.*', 'package-lock%.json', 'package%.nls*%.json', 'pnpm*', 'release-please*%.json', 'release%.config%.*', 'simple-git-hooks*', 'turbo*', 'workspace%.json', 'yarn*', 'build%.config%.*', 'electron-builder%.*', 'grunt*', 'gulp*', 'rollup%.config%.*', 'tsup%.config%.*', 'webpack*', 'rspack*', '%.circleci*', '%.firebase*', '%.github*', '%.gitlab*', '%.gitpod*', '%.sentry*', '%.stackblitz*', '%.styleci*', '%.travis*', 'appveyor*', 'azure-pipelines*', 'crowdin*', 'jenkins*', 'netlify*', 'nixpacks*', 'Procfile', 'pullapprove*', 'release-tasks%.sh', 'renovate*', 'sonar-project%.properties', 'unlighthouse*', 'vercel*', 'wrangler%.toml', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*', 'knip%.*', '%.knip%.*' },
     pattern = 'package%.json$'
   },
   ['pubspec.yaml'] = {
@@ -290,7 +298,7 @@ M.nesting_rules = {
     pattern = 'pubspec%.yaml$'
   },
   ['pyproject.toml'] = {
-    files = { 'pyproject%.toml', 'pdm%.lock', '%.pdm%.toml', '%.pdm-python', 'poetry%.lock', 'poetry%.toml', 'setup%.py', 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', 'hatch%.toml', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*' },
+    files = { 'pyproject%.toml', 'pdm%.lock', '%.pdm%.toml', '%.pdm-python', 'poetry%.lock', 'poetry%.toml', 'uv%.lock', 'uv%.toml', 'setup%.py', 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', 'Pipfile', 'Pipfile%.lock', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', 'hatch%.toml', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*' },
     pattern = 'pyproject%.toml$'
   },
   ['quasar.conf.js'] = {
@@ -306,8 +314,12 @@ M.nesting_rules = {
     pattern = 'requirements%.txt$'
   },
   ['rush.json'] = {
-    files = { '%.browserslist*', '%.cz-config%.js', '%.czrc', 'components%.*', '%.nodemon*', '%.pm2*', '%.versionrc*', '%.vscode*', '%.watchman*', 'apollo%.config%.*', 'nest-cli%.*', 'nodemon*', 'pm2%.*', 'typedoc*', 'vetur%.config%.*', '%.gitmojirc%.json', '%.huskyrc*', '%.node-version', '%.npm*', '%.nvmrc', '%.pnp%.*', '%.pnpm*', '%.release-please*%.json', '%.releaserc*', '%.simple-git-hooks*', '%.tazerc*', '%.tool-versions', '%.yarnrc*', 'bower%.json', 'bun%.lockb', 'firebase%.json', 'lerna*', 'npm-shrinkwrap%.json', 'nx%.*', 'package-lock%.json', 'package%.nls*%.json', 'pnpm*', 'release-please*%.json', 'release%.config%.*', 'simple-git-hooks*', 'turbo*', 'workspace%.json', 'yarn*', 'build%.config%.*', 'electron-builder%.*', 'grunt*', 'gulp*', 'rollup%.config%.*', 'tsup%.config%.*', 'webpack*', 'rspack*', '%.circleci*', '%.firebase*', '%.github*', '%.gitlab*', '%.gitpod*', '%.sentry*', '%.stackblitz*', '%.styleci*', '%.travis*', 'appveyor*', 'azure-pipelines*', 'crowdin*', 'jenkins*', 'netlify*', 'Procfile', 'pullapprove*', 'release-tasks%.sh', 'renovate*', 'sonar-project%.properties', 'unlighthouse*', 'vercel*', 'wrangler%.toml', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*', 'knip%.*', '%.knip%.*' },
+    files = { '%.browserslist*', '%.cz-config%.js', '%.czrc', 'components%.*', '%.nodemon*', '%.pm2*', '%.versionrc*', '%.vscode*', '%.watchman*', 'apollo%.config%.*', 'nest-cli%.*', 'nodemon*', 'pm2%.*', 'typedoc*', 'vetur%.config%.*', '%.gitmojirc%.json', '%.huskyrc*', '%.node-version', '%.npm*', '%.nvmrc', '%.pnp%.*', '%.pnpm*', '%.release-please*%.json', '%.releaserc*', '%.simple-git-hooks*', '%.tazerc*', '%.tool-versions', '%.yarnrc*', '*%.code-workspace', 'bower%.json', 'bun%.lockb', 'bunfig%.toml', 'firebase%.json', 'lerna*', 'npm-shrinkwrap%.json', 'nx%.*', 'package-lock%.json', 'package%.nls*%.json', 'pnpm*', 'release-please*%.json', 'release%.config%.*', 'simple-git-hooks*', 'turbo*', 'workspace%.json', 'yarn*', 'build%.config%.*', 'electron-builder%.*', 'grunt*', 'gulp*', 'rollup%.config%.*', 'tsup%.config%.*', 'webpack*', 'rspack*', '%.circleci*', '%.firebase*', '%.github*', '%.gitlab*', '%.gitpod*', '%.sentry*', '%.stackblitz*', '%.styleci*', '%.travis*', 'appveyor*', 'azure-pipelines*', 'crowdin*', 'jenkins*', 'netlify*', 'nixpacks*', 'Procfile', 'pullapprove*', 'release-tasks%.sh', 'renovate*', 'sonar-project%.properties', 'unlighthouse*', 'vercel*', 'wrangler%.toml', '%.commitlint*', '%.dlint%.json', '%.dprint%.json*', '%.editorconfig', '%.eslint*', '%.flowconfig', '%.jslint*', '%.lintstagedrc*', '%.markdownlint*', '%.prettier*', '%.pylintrc', '%.ruff%.toml', '%.stylelint*', '%.textlint*', '%.xo-config*', '%.yamllint*', 'biome%.json*', 'commitlint*', 'dangerfile*', 'dlint%.json', 'dprint%.json*', 'eslint*', 'lint-staged*', 'phpcs%.xml', 'prettier*', 'pyrightconfig%.json', 'ruff%.toml', 'stylelint*', 'tslint*', 'xo%.config%.*', 'knip%.*', '%.knip%.*' },
     pattern = 'rush%.json$'
+  },
+  ['sanity.config.*'] = {
+    files = { 'sanity%.cli%.*', 'sanity%.types%.ts', 'schema%.json' },
+    pattern = 'sanity%.config%.(.*)$'
   },
   ['setup.cfg'] = {
     files = { 'setup%.cfg', 'MANIFEST%.in', 'requirements*%.txt', 'requirements*%.in', 'requirements*%.pip', 'tox%.ini', '%.flake8', '%.isort%.cfg', '%.python-version' },
