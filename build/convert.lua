@@ -259,7 +259,6 @@ local readme = {
   "LICENSE*",
   "MAINTAINERS",
   "README_*",
-  "README-*",
   "RELEASE_NOTES*",
   "ROADMAP.MD",
   "SECURITY.MD",
