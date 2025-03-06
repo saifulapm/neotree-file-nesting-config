@@ -3,13 +3,17 @@ local buildTools = {
   "electron-builder.*",
   "grunt*",
   "gulp*",
+  "rolldown.config.*",
   "rollup.config.*",
   "tsup.config.*",
+  "tsdown.config.*",
   "webpack*",
   "rspack*",
 }
 
 local dependencyAnalysis = { "knip.*", ".knip.*" }
+
+local syntaxHighlighting = { "ec.config.*" }
 
 local testingTools = {
   ".codecov",
@@ -31,6 +35,7 @@ local tsconfig = { "api-extractor.json", "jsconfig.*", "tsconfig.*", "tsdoc.*" }
 
 local services = {
   ".circleci*",
+  ".cursorrules",
   ".firebase*",
   ".github*",
   ".gitlab*",
@@ -41,6 +46,7 @@ local services = {
   ".travis*",
   "appveyor*",
   "azure-pipelines*",
+  "colada.options.ts",
   "crowdin*",
   "jenkins*",
   "netlify*",
@@ -49,14 +55,16 @@ local services = {
   "pullapprove*",
   "release-tasks.sh",
   "renovate*",
+  "sentry.*.config.ts",
   "sonar-project.properties",
   "unlighthouse*",
   "vercel*",
-  "wrangler.toml",
+  "wrangler.*",
 }
 
 local linters = {
   ".commitlint*",
+  ".cspell*",
   ".dlint.json",
   ".dprint.json*",
   ".editorconfig",
@@ -64,16 +72,19 @@ local linters = {
   ".flowconfig",
   ".jslint*",
   ".lintstagedrc*",
+  ".ls-lint.yml",
   ".markdownlint*",
   ".prettier*",
   ".pylintrc",
   ".ruff.toml",
+  ".shellcheckrc",
   ".stylelint*",
   ".textlint*",
   ".xo-config*",
   ".yamllint*",
   "biome.json*",
   "commitlint*",
+  "cspell*",
   "dangerfile*",
   "dlint.json",
   "dprint.json*",
@@ -106,6 +117,7 @@ local workspaces = {
   ".yarnrc*",
   "*.code-workspace",
   "bower.json",
+  "bun.lock",
   "bun.lockb",
   "bunfig.toml",
   "firebase.json",
@@ -138,7 +150,9 @@ local tex = {
   "%1.acr",
   "%1.alg",
   "%1.aux",
+  "%1.bbl-SAVE-ERROR",
   "%1.bbl",
+  "%1.bcf",
   "%1.blg",
   "%1.fdb_latexmk",
   "%1.fls",
@@ -151,8 +165,10 @@ local tex = {
   "%1.lof",
   "%1.log",
   "%1.lot",
+  "%1.nav",
   "%1.out",
-  "%1.pdf",
+  "%1.run.xml",
+  "%1.snm",
   "%1.synctex.gz",
   "%1.toc",
   "%1.xdv",
@@ -180,6 +196,7 @@ local libraries = {
   ".terserrc*",
   "babel.config.*",
   "capacitor.config.*",
+  "content.config.*",
   "contentlayer.config.*",
   "cssnano.config.*",
   "drizzle.config.*",
@@ -190,6 +207,7 @@ local libraries = {
   "ionic.config.*",
   "panda.config.*",
   "postcss.config.*",
+  "react-router.config.*",
   "rspack.config.*",
   "sst.config.*",
   "svgo.config.*",
@@ -242,6 +260,9 @@ end
 for i = 1, #dependencyAnalysis do
   table.insert(packageJSON, dependencyAnalysis[i])
 end
+for i = 1, #syntaxHighlighting do
+  table.insert(packageJSON, syntaxHighlighting[i])
+end
 
 local readme = {
   "AUTHORS",
@@ -266,8 +287,17 @@ local readme = {
   "README-*",
 }
 
-local cargo =
-  { ".clippy.toml", ".rustfmt.toml", "cargo.lock", "clippy.toml", "cross.toml", "rust-toolchain.toml", "rustfmt.toml" }
+local cargo = {
+  ".clippy.toml",
+  ".rustfmt.toml",
+  "Cargo.Bazel.lock",
+  "Cargo.lock",
+  "clippy.toml",
+  "cross.toml",
+  "insta.yaml",
+  "rust-toolchain.toml",
+  "rustfmt.toml",
+}
 
 local gofile = { "go.sum", ".air*" }
 
@@ -359,7 +389,7 @@ local sanity = { "sanity.cli.*", "sanity.types.ts", "schema.json" }
 
 local base = {
   [".clang-tidy"] = ".clang-format, .clangd, compile_commands.json",
-  [".gitignore"] = ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
+  [".gitignore"] = ".gitattributes, .gitmodules, .gitmessage, .lfsconfig, .mailmap, .git-blame*",
   [".project"] = ".classpath",
   ["*.asax"] = "%1.*.cs, %1.*.vb",
   ["*.ascx"] = "%1.*.cs, %1.*.vb",
@@ -380,8 +410,8 @@ local base = {
   ["*.fs"] = "%1.fs.js, %1.fs.js.map, %1.fs.jsx, %1.fs.ts, %1.fs.tsx, %1.fs.rs, %1.fs.php, %1.fs.dart",
   ["*.go"] = "%1_test.go",
   ["*.java"] = "%1.class",
-  ["*.js"] = "%1.js.map, %1.*.js, %1_*.js, %1_*.d.ts",
-  ["*.jsx"] = "%1.js, %1.*.jsx, %1_*.js, %1_*.jsx, %1.less, %1.module.less, %1.module.less.d.ts, %1.scss, %1.module.scss, %1.module.scss.d.ts",
+  ["*.js"] = "%1.js.map, %1.*.js, %1_*.js, %1.d.ts, %1.js.flow",
+  ["*.jsx"] = "%1.js, %1.*.jsx, %1_*.js, %1_*.jsx, %1.css, %1.module.css, %1.less, %1.module.less, %1.module.less.d.ts, %1.scss, %1.module.scss, %1.module.scss.d.ts",
   ["*.master"] = "%1.*.cs, %1.*.vb",
   ["*.md"] = "%1.*",
   ["*.mjs"] = "%1.mjs.map, %1.*.mjs, %1_*.mjs",
@@ -391,13 +421,13 @@ local base = {
   ["*.py"] = "%1.pyi",
   ["*.resx"] = "%1.*.resx, %1.designer.cs, %1.designer.vb",
   ["*.ts"] = "%1.js, %1.d.ts.map, %1.*.ts, %1_*.js, %1_*.ts",
-  ["*.tsx"] = "%1.ts, %1.*.tsx, %1_*.ts, %1_*.tsx, %1.less, %1.module.less, %1.module.less.d.ts, %1.scss, %1.module.scss, %1.module.scss.d.ts, %1.css.ts",
+  ["*.tsx"] = "%1.ts, %1.*.tsx, %1_*.ts, %1_*.tsx, %1.css, %1.module.css, %1.less, %1.module.less, %1.module.less.d.ts, %1.scss, %1.module.scss, %1.module.scss.d.ts, %1.css.ts",
   ["*.vue"] = "%1.*.ts, %1.*.js, %1.story.vue",
   ["*.w"] = "%1.*.w, I%1.w",
   ["*.xaml"] = "%1.xaml.cs",
   ["ansible.cfg"] = "ansible.cfg, .ansible-lint, requirements.yml",
   ["build-wrapper.log"] = "build-wrapper*.log, build-wrapper-dump*.json, build-wrapper-win*.exe, build-wrapper-linux*, build-wrapper-macosx*",
-  ["BUILD.bazel"] = "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
+  ["BUILD.bazel"] = "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, .bazelversion, MODULE.bazel.lock, WORKSPACE",
   ["CMakeLists.txt"] = "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt",
   ["default.nix"] = "shell.nix",
   ["flake.nix"] = "flake.lock",
